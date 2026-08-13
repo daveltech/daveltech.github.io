@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daveltech.github.io/sitemap-index.xml
