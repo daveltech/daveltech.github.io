@@ -26,12 +26,12 @@ const gridCols: Record<number, string> = { 1: 'lg:grid-cols-1', 2: 'lg:grid-cols
             ]}
           >
             <div class="flex-1">
-              <h2 class="text-xl font-medium">{pricing.name}</h2>
+              <h2 class="text-xl font-semibold leading-tight">{pricing.name}</h2>
               <p class="mt-4 flex items-baseline">
                 <span class="text-4xl font-medium tracking-tight">{pricing.price}</span>
                 <span class="text-muted ml-1 text-sm font-medium">{pricing.periodicity}</span>
               </p>
-              <p class="text-muted mt-6">{pricing.description}</p>
+              <p class="text-muted mt-6 leading-relaxed">{pricing.description}</p>
 
               <ul role="list" class="mt-6 space-y-6">
                 {pricing.features.map((feature) => (

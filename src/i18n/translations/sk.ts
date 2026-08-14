@@ -51,16 +51,16 @@ export const sk: Translation = {
     ],
   },
   contact: {
-    description: 'Kontaktujte DAVELTECH s.r.o. vo Zvolene telefonicky, e-mailom alebo cez sociálne siete a objednajte si revíziu elektrických zariadení a bleskozvodov.',
+    description: 'Kontaktujte DAVELTECH vo Zvolene telefonicky, e-mailom alebo cez sociálne siete a objednajte si revíziu elektrických zariadení a bleskozvodov.',
     title: 'Kontakt · DAVELTECH',
   },
   content: {
-    header: 'DAVELTECH s.r.o.',
+    header: 'DAVELTECH',
     intro: 'DAVELTECH s. r. o. sa špecializuje na vykonávanie revízie, resp. odbornej prehliadky a odbornej skúšky elektrického zariadenia a bleskozvodu v objektoch s napätím do 1000V.',
     introCtaPrimary: 'KOMPLETNÁ PONUKA SLUŽIEB',
     introCtaSecondary: 'OZVITE SA NÁM',
     aboutTitle: 'O nás',
-    aboutText: 'DAVELTECH s.r.o. je dynamicky sa rozvíjajúca spoločnosť v oblasti elektrotechnického priemyslu. Našou hlavnou činnosťou je vykonávanie revízií, resp. odborných prehliadok a odborných skúšok elektrických zariadení a bleskozvodov v objektoch s napätím do 1000V. Sme zameraní na kvalitu, inováciu a spoluprácu s klientmi.',
+    aboutText: 'DAVELTECH je dynamicky sa rozvíjajúca spoločnosť v oblasti elektrotechnického priemyslu. Našou hlavnou činnosťou je vykonávanie revízií, resp. odborných prehliadok a odborných skúšok elektrických zariadení a bleskozvodov v objektoch s napätím do 1000V. Sme zameraní na kvalitu, inováciu a spoluprácu s klientmi.',
     servicesTitle: 'Služby',
     servicesIntro: 'Čo pokrývajú naše revízie:',
     services: [
@@ -70,9 +70,9 @@ export const sk: Translation = {
       { ref: '04', name: 'Spotrebiče a náradie', description: 'Skúšky elektrických spotrebičov, náradia a rozvádzačov.' },
     ],
     teamTitle: 'Náš tím',
-    teamText: 'Naša spoločnosť DAVELTECH s.r.o. je zameraná na revízie a skúšky elektrických zariadení a bleskozvodov, ktoré vykonávame s vysokou profesionalitou a dôrazom na bezpečnosť.',
+    teamText: 'Naša spoločnosť DAVELTECH je zameraná na revízie a skúšky elektrických zariadení a bleskozvodov, ktoré vykonávame s vysokou profesionalitou a dôrazom na bezpečnosť.',
     contactTitle: 'Kontakt',
-    contactText: 'Názov a sídlo\nDAVELTECH, s.r.o.\nA.HLINKU 16\n960 01 Zvolen\nFakturačné údaje\nIČO: 56 891 954\nDIČ: 21 224 919 43\nKontakty:\nIng. Igor SERBIN\nkonateľ spoločnosti\n+421 915 843 614\nemail: daveltechsro@gmail.com\n\nTelefónne číslo\n+421 915 843 614\n\nAdresa\nA.HLINKU 16/, Zvolen, 960 01',
+    contactText: 'Názov a sídlo\nDAVELTECH\nA.HLINKU 16\n960 01 Zvolen\nFakturačné údaje\nIČO: 56 891 954\nDIČ: 21 224 919 43\nKontakty:\nIng. Igor SERBIN\nkonateľ spoločnosti\n+421 915 843 614\nemail: daveltechsro@gmail.com\n\nTelefónne číslo\n+421 915 843 614\n\nAdresa\nA.HLINKU 16/, Zvolen, 960 01',
     certificates: 'Vydané osvedčenia - Revízny technik (§16 a §24 vyhl. č. 508/2009 Z.z.)',
     equipmentList: [
       '<strong>Metrel MI 3155 ST Eurotest XD</strong> – tester elektrických inštalácií a bleskozvodov.',
@@ -89,7 +89,7 @@ export const sk: Translation = {
   contactInfo: {
     heading: 'Kontakt',
     companyTitle: 'Názov a sídlo',
-    companyName: 'DAVELTECH, s.r.o.',
+    companyName: 'DAVELTECH',
     companyAddress: 'A.Hlinku 16, 960 01 Zvolen',
     billingTitle: 'Fakturačné údaje',
     companyIco: 'IČO: 56 891 954',
@@ -112,7 +112,7 @@ export const sk: Translation = {
     messengerUrl: 'https://m.me/61583629266532',
   },
   home: {
-    description: 'DAVELTECH s.r.o. poskytuje revízie, odborné prehliadky a skúšky elektrických zariadení a bleskozvodov do 1000V vo Zvolene a Banskobystrickom kraji.',
+    description: 'DAVELTECH poskytuje revízie, odborné prehliadky a skúšky elektrických zariadení a bleskozvodov do 1000V vo Zvolene a Banskobystrickom kraji.',
     title: 'DAVELTECH · Revízie elektrických zariadení',
   },
   homeAbout: {
@@ -160,7 +160,7 @@ export const sk: Translation = {
   },
   layoutFooter: {
     title: 'Päta',
-    companyName: 'DAVELTECH s.r.o',
+    companyName: 'DAVELTECH',
     followUs: 'Sledujte nás',
     facebook: 'facebook.com/profile.php?id=61583629266532',
     github: 'github.com/daveltech',
@@ -183,7 +183,7 @@ export const sk: Translation = {
     toggleLanguage: 'Prepnúť jazyk',
     toggleTheme: 'Prepnúť tému',
     toggleMenu: 'Prepnúť menu',
-    companyName: 'DAVELTECH s.r.o',
+    companyName: 'DAVELTECH',
     home: 'Domov',
     about: 'O nás',
     pricing: 'Cenník',
@@ -191,7 +191,7 @@ export const sk: Translation = {
     description: '<strong>DAVELTECH</strong> poskytuje profesionálne revízne a skúšobné služby v oblasti elektro.',
   },
   pricing: {
-    description: 'Orientačný cenník revízií elektrických zariadení a bleskozvodov od DAVELTECH s.r.o. Vyberte si variant podľa rozsahu a typu objektu.',
+    description: 'Orientačný cenník revízií elektrických zariadení a bleskozvodov od DAVELTECH Vyberte si variant podľa rozsahu a typu objektu.',
     title: 'Cenník · DAVELTECH',
   },
   pricingCta: {
@@ -222,7 +222,7 @@ export const sk: Translation = {
     heading: 'Právne informácie a ochrana osobných údajov',
     lastUpdated: 'Aktualizované: 1. januára 2026',
     publisherHeading: '1. Prevádzkovateľ webu',
-    publisherText: 'Túto stránku prevádzkuje DAVELTECH s.r.o., IČO: 56891954, so sídlom A.Hlinku 16, 960 01 Zvolen. Pre otázky nás kontaktujte cez ',
+    publisherText: 'Túto stránku prevádzkuje DAVELTECH, IČO: 56891954, so sídlom A.Hlinku 16, 960 01 Zvolen. Pre otázky nás kontaktujte cez ',
     contactFormLink: 'kontaktnú stránku.',
     hostingHeading: '2. Hosting',
     hostingText: 'Stránka je hostovaná prostredníctvom GitHub Pages (GitHub, Inc.).',
@@ -230,7 +230,7 @@ export const sk: Translation = {
     openSourceCreditsText: 'Web je postavený na open-source šablóne. ',
     licenseLink: 'Licenčné podmienky nájdete tu.',
     openSourceCreditsEnd: '',
-    contentOwnershipText: 'Obsah webu je vlastníctvom DAVELTECH s.r.o., pokiaľ nie je uvedené inak.',
+    contentOwnershipText: 'Obsah webu je vlastníctvom DAVELTECH, pokiaľ nie je uvedené inak.',
     reproductionProhibitedText: 'Zverejnenie alebo šírenie obsahu bez súhlasu je zakázané.',
     privacyHeading: '4. Ochrana osobných údajov',
     privacyIntro: 'Osobné údaje spracúvame len v rozsahu, ktorý nám sami poskytnete pri telefonickom, e-mailovom alebo sociálnom kontakte. Stránka sama osebe žiadne osobné údaje nezbiera.',
@@ -247,7 +247,7 @@ export const sk: Translation = {
     title: 'Štýlový manuál · DAVELTECH',
     heading: 'Štýlový manuál',
     logoDesc: 'Logo',
-    companyName: 'DAVELTECH s.r.o.',
+    companyName: 'DAVELTECH',
     colorsDesc: 'Farby',
     typoDesc: 'Typografia',
     h1Demo: 'Nadpis 1',

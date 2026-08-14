@@ -12,8 +12,8 @@ const labels = getLabels(Astro.currentLocale, 'content');
       <!-- Services -->
       <div class="flex flex-col gap-8 lg:gap-12">
         <div>
-          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">{labels.servicesTitle}</h2>
-          <p class="text-muted mt-4 text-lg">{labels.servicesIntro}</p>
+          <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">{labels.servicesTitle}</h2>
+          <p class="text-muted mt-4 text-lg leading-relaxed">{labels.servicesIntro}</p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {labels.services.map((service) => (
@@ -50,7 +50,7 @@ const labels = getLabels(Astro.currentLocale, 'content');
 
       <!-- How an inspection works -->
       <div>
-        <h2 class="mb-8 text-3xl font-medium tracking-tight sm:text-4xl">{labels.legalNote}</h2>
+        <h2 class="mb-8 text-3xl font-semibold leading-tight sm:text-4xl">{labels.legalNote}</h2>
         <div class="grid gap-6 sm:grid-cols-3">
           {labels.bulletList.map((bullet, index) => (
             <div class="bg-surface card-hover rounded-2xl p-6">
