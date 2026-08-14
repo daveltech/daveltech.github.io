@@ -1,7 +1,6 @@
 import type { Alpine } from 'alpinejs';
 import type { ThemeStore, LanguageStore } from './types';
 import collapse from '@alpinejs/collapse';
-import contactForm from './contact-form';
 import dnaBackground from './dna-background';
 import { defaultLocale, locales } from '@i18n/utils';
 
@@ -9,7 +8,6 @@ const base = import.meta.env.BASE_URL;
 
 const entrypoint = (Alpine: Alpine) => {
   Alpine.plugin(collapse);
-  Alpine.plugin(contactForm);
   Alpine.plugin(dnaBackground);
 
   Alpine.data('accordion', () => ({

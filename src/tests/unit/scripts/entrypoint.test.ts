@@ -197,10 +197,10 @@ describe('entrypoint', () => {
       const langStoreCall = mockAlpine.store.mock.calls.find((call: any) => call[0] === 'language');
       const langStore = langStoreCall?.[1];
 
-      globalThis.location.pathname = `${base}fr/about/`;
+      globalThis.location.pathname = `${base}en/about/`;
 
       langStore.init();
-      expect(langStore.lang).toBe('fr');
+      expect(langStore.lang).toBe('en');
       expect(globalThis.localStorage.setItem).not.toHaveBeenCalled();
     });
 
@@ -212,7 +212,7 @@ describe('entrypoint', () => {
       globalThis.location.pathname = `${base}es/about/`;
 
       langStore.init();
-      expect(langStore.lang).toBe('en');
+      expect(langStore.lang).toBe('sk');
       expect(globalThis.localStorage.setItem).not.toHaveBeenCalled();
     });
 
@@ -224,7 +224,7 @@ describe('entrypoint', () => {
       globalThis.location.pathname = `${base}`;
 
       langStore.init();
-      expect(langStore.lang).toBe('en');
+      expect(langStore.lang).toBe('sk');
       expect(globalThis.localStorage.setItem).not.toHaveBeenCalled();
     });
 

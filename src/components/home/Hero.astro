@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroImg from '@assets/hero.webp';
+import heroImg from '@assets/electro-4.webp';
 import { getLabels } from '@i18n/utils';
 
 const labels = getLabels(Astro.currentLocale, 'homeHero');
@@ -11,16 +11,19 @@ const interval = 100;
 const max = initial + (letters.length - visibleLetters.length) * interval;
 ---
 
-<section class="py-16 sm:py-20">
-  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="flex flex-col gap-16">
-      <div class="flex flex-col items-start gap-8 sm:gap-10">
+<section class="py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-12 lg:gap-16">
+      
+      <div class="flex flex-col items-start">
         <div
-          class="flex max-w-2xl flex-col items-start gap-4 sm:gap-6"
+          class="flex w-full max-w-4xl flex-col items-start gap-5 sm:gap-6"
           x-data={`typewriter(${interval}, ${max})`}
           x-init="start()"
         >
-          <h1 class="relative text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
+          <h1
+            class="relative max-w-4xl text-left text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl"
+          >
             {
               letters.map((letter, index) => {
                 const included = visibleLetters.filter((v) => v < index).length;
@@ -29,17 +32,34 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
                     set:text={letter}
                     {...(visibleLetters.includes(index)
                       ? { 'x-ignore': '' }
-                      : { 'x-show': 'i > ' + (initial + (index - included) * interval), 'x-cloak': '' })}
+                      : {
+                          'x-show': 'i > ' + (initial + (index - included) * interval),
+                          'x-cloak': '',
+                        })}
                   />
                 );
               })
             }
-            <span class="from-primary-500/0 to-primary-500 block h-1 bg-linear-to-r sm:h-1.5 lg:h-2"></span>
+
+            <span class="from-primary-500/0 to-primary-500 block h-2 w-full max-w-md bg-linear-to-r opacity-75 transition-all duration-300 hover:opacity-100 sm:h-3 sm:max-w-2xl lg:h-4 lg:max-w-4xl"></span>
           </h1>
-          <p class="text-muted max-w-md text-lg sm:max-w-lg sm:text-xl">{labels.description}</p>
+
+          <p class="text-muted max-w-2xl text-left text-lg leading-relaxed sm:text-xl">
+            {labels.description}
+          </p>
+
+          <p class="text-primary-500 max-w-2xl text-left text-sm font-medium uppercase tracking-widest">
+            {labels.region}
+          </p>
         </div>
       </div>
-      <Image class="h-auto w-full rounded-3xl" src={heroImg} alt={labels.heroImgAlt} priority />
+
+      <Image
+        class="h-auto w-full rounded-3xl object-cover"
+        src={heroImg}
+        alt={labels.heroImgAlt}
+        priority
+      />
     </div>
   </div>
 </section>

@@ -9,7 +9,11 @@ interface Props {
 const { id, index } = Astro.props;
 ---
 
-<div class="rounded-3xl px-4 transition" x-data={`accordionItem(${index})`} x-bind:class="{ 'bg-surface': isOpen() }">
+<div
+  class="hover:bg-surface rounded-3xl px-4 transition"
+  x-data={`accordionItem(${index})`}
+  x-bind:class="{ 'bg-surface': isOpen() }"
+>
   <dt
     class="border-b text-lg transition"
     x-bind:class="{ 'border-transparent': isOpen() || isNextOpen(), 'border-subtle': !(isOpen() || isNextOpen()) }"

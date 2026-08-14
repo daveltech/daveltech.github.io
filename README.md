@@ -28,8 +28,6 @@ Production-ready theme specially designed for Business, Marketing, SaaS and Star
 * **Prettier** Code Formatter
 * **Google Fonts**
 * **Remix Icons**
-* **Basin** Contact Form
-* **Turnstile** Spam Protection
 
 ## <img src="public/logo.svg" width="24" height="24" align="center" /> Getting Started
 
@@ -38,17 +36,6 @@ Production-ready theme specially designed for Business, Marketing, SaaS and Star
 * Basic knowledge of Astro, HTML and CSS.
 * Text editor (We recommend Visual Studio Code)
 * Node.js 22 or higher.
-
-### Environment variables
-
-Before you start, make sure to create a `.env` file in the root of your project and add the following environment variables:
-
-```
-BASIN_FORM_ID=<your-form-id> ①
-TURNSTILE_SITEKEY=<your-sitekey> ②
-```
-1. Your Basin Form ID. You can find it in your [Basin dashboard](https://usebasin.com/?via=cjoyau).
-2. Your Cloudflare Turnstile Site Key. You can find it in your Cloudflare dashboard.
 
 ### Commands
 

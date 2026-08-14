@@ -1,17 +1,17 @@
 import { type Translation } from './translation';
 import { en } from './translations/en';
-import { fr } from './translations/fr';
+import { sk } from './translations/sk';
 
-export const defaultLocale = 'en';
-export const locales = ['en', 'fr'];
+export const defaultLocale = 'sk';
+export const locales = ['en', 'sk'];
 export const ogLocales: Record<string, string> = {
   en: 'en_US',
-  fr: 'fr_FR',
+  sk: 'sk_SK',
 };
 export const prefixDefaultLocale = false;
 
 const base = import.meta.env.BASE_URL;
-const translations: Record<string, Translation> = { en, fr };
+const translations: Record<string, Translation> = { en, sk };
 
 export function getStaticPaths() {
   return locales.map((lang) => ({

@@ -17,7 +17,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/team-*.
         <GroupIcon class="fill-primary-500 h-8 w-8 shrink-0 sm:h-10 sm:w-10" aria-hidden="true" />
         <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">{labels.title}</h2>
       </div>
-      <ul role="list" class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <ul role="list" class="mx-auto grid max-w-xs grid-cols-1 gap-8">
         {
           members.map((member, index) => (
             <li class="border-subtle rounded-3xl border px-6 py-8">

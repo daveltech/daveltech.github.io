@@ -86,3 +86,8 @@
 @utility icon-primary {
   @apply text-primary-600 dark:text-primary-400 h-6 w-6;
 }
+
+@utility card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:hover:shadow-primary-950/40;
+}
+

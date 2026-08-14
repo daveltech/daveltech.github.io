@@ -46,34 +46,53 @@ export interface Translation {
     description: string;
     title: string;
   };
-  contactForm: {
-    title: string;
-    description: string;
-    responseTime: string;
-    policyText: string;
-    policyLink: string;
-    form: {
+  content: {
+    header: string;
+    intro: string;
+    introCtaPrimary: string;
+    introCtaSecondary: string;
+    aboutTitle: string;
+    aboutText: string;
+    servicesTitle: string;
+    servicesIntro: string;
+    services: Array<{
+      ref: string;
       name: string;
-      email: string;
-      message: string;
-      submit: string;
-    };
-    success: {
-      title: string;
-      desc: string;
-      back: string;
-    };
-    error: {
-      title: string;
-      desc: string;
-      back: string;
-    };
+      description: string;
+    }>;
+    teamTitle: string;
+    teamText: string;
+    contactTitle: string;
+    contactText: string;
+    certificates: string;
+    equipmentList: string[];
+    legalNote: string;
+    bulletList: string[];
   };
   contactInfo: {
-    address: string;
-    location: string;
-    linkedin: string;
+    heading: string;
+    companyTitle: string;
+    companyName: string;
+    companyAddress: string;
+    billingTitle: string;
+    companyIco: string;
+    companyDic: string;
+    contactsTitle: string;
+    contactPerson: string;
+    contactRole: string;
+    phoneTitle: string;
+    phone: string;
+    emailTitle: string;
+    email: string;
+    whatsapp: string;
+    telegram: string;
+    messenger: string;
+    facebook: string;
+    linkedIn: string;
     github: string;
+    whatsappUrl: string;
+    telegramUrl: string;
+    messengerUrl: string;
   };
   home: {
     description: string;
@@ -110,6 +129,7 @@ export interface Translation {
     visibleLetters: number[];
     description: string;
     heroImgAlt: string;
+    region: string;
   };
   homeServices: {
     title: string;
@@ -123,9 +143,11 @@ export interface Translation {
     title: string;
     companyName: string;
     followUs: string;
-    linkedin: string;
+    facebook: string;
     github: string;
+    linkedin: string;
     company: string;
+    services: string;
     regulatory: string;
     links: {
       home: string;
@@ -133,10 +155,8 @@ export interface Translation {
       pricing: string;
       contact: string;
       legal: string;
-      privacy: string;
       styleguide: string;
     };
-    description: string;
     copyright: string;
   };
   layoutHeader: {
@@ -199,58 +219,13 @@ export interface Translation {
     openSourceCreditsEnd: string;
     contentOwnershipText: string;
     reproductionProhibitedText: string;
-    personalDataHeading: string;
-    personalDataIntro: string;
-    dataCollectionItem: string;
-    dataProcessorsItem: string;
+    privacyHeading: string;
+    privacyIntro: string;
+    dataProcessingItem: string;
+    retentionItem: string;
     userRightsItem: string;
     contactRightsText: string;
     cnilComplaintItem: string;
-    privacyPolicyPromptText: string;
-    privacyPolicyLink: string;
-    cookiesHeading: string;
-    cookiesText: string;
-  };
-  privacy: {
-    description: string;
-    title: string;
-    heading: string;
-    lastUpdated: string;
-    intro: string;
-    dataControllerHeading: string;
-    dataControllerText: string;
-    contactFormLink: string;
-    collectedDataHeading: string;
-    contactFormHeading: string;
-    contactFormIntro: string;
-    identificationData: string;
-    contactData: string;
-    messageContent: string;
-    contactFormPurpose: string;
-    securityHeading: string;
-    securityIntro: string;
-    securityPurpose: string;
-    hostingHeading: string;
-    hostingIntro: string;
-    hostingLogsText: string;
-    dataRecipientsHeading: string;
-    dataRecipientsIntro: string;
-    githubRecipient: string;
-    basinRecipient: string;
-    cloudflareRecipient: string;
-    dataTransfersText: string;
-    retentionPeriodHeading: string;
-    contactRequestsRetention: string;
-    technicalLogsRetention: string;
-    userRightsHeading: string;
-    userRightsIntro: string;
-    rightOfAccess: string;
-    rightOfRectification: string;
-    rightToErasure: string;
-    rightToObjection: string;
-    rightToPortability: string;
-    exerciseRightsPrompt: string;
-    cnilComplaintText: string;
     cookiesHeading: string;
     cookiesText: string;
   };

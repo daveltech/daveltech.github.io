@@ -13,9 +13,9 @@ const base = import.meta.env.BASE_URL;
 
 describe('i18n utils', () => {
   it('exports correct constants', () => {
-    expect(defaultLocale).toBe('en');
-    expect(locales).toEqual(['en', 'fr']);
-    expect(ogLocales).toEqual({ en: 'en_US', fr: 'fr_FR' });
+    expect(defaultLocale).toBe('sk');
+    expect(locales).toEqual(['en', 'sk']);
+    expect(ogLocales).toEqual({ en: 'en_US', sk: 'sk_SK' });
     expect(prefixDefaultLocale).toBe(false);
   });
 
@@ -23,18 +23,18 @@ describe('i18n utils', () => {
     it('returns the correct paths for locales', () => {
       const paths = getStaticPaths();
       expect(paths).toHaveLength(2);
-      expect(paths).toEqual([{ params: { lang: undefined } }, { params: { lang: 'fr' } }]);
+      expect(paths).toEqual([{ params: { lang: 'en' } }, { params: { lang: undefined } }]);
     });
   });
 
   describe('getLabels', () => {
     it('returns translations for a given locale and key', () => {
       const homeEn = getLabels('en', 'home');
-      const homeFr = getLabels('fr', 'home');
+      const homeSk = getLabels('sk', 'home');
 
       expect(homeEn).toBeDefined();
-      expect(homeFr).toBeDefined();
-      expect(homeEn).not.toEqual(homeFr);
+      expect(homeSk).toBeDefined();
+      expect(homeEn).not.toEqual(homeSk);
     });
 
     it('falls back to defaultLocale when currentLocale is undefined', () => {
@@ -53,9 +53,9 @@ describe('i18n utils', () => {
 
     it('every locale defines all top-level translation keys', async () => {
       const { en } = await import('@i18n/translations/en');
-      const { fr } = await import('@i18n/translations/fr');
+      const { sk } = await import('@i18n/translations/sk');
 
-      const allLocaleTranslations: Record<string, typeof en> = { en, fr };
+      const allLocaleTranslations: Record<string, typeof en> = { en, sk };
       const expectedKeys = Object.keys(en) as Array<keyof typeof en>;
 
       for (const locale of locales) {
@@ -79,14 +79,14 @@ describe('i18n utils', () => {
 
     it('array fields in translations have consistent length across locales', async () => {
       const { en } = await import('@i18n/translations/en');
-      const { fr } = await import('@i18n/translations/fr');
+      const { sk } = await import('@i18n/translations/sk');
 
       const arrayKeys = (Object.keys(en) as Array<keyof typeof en>).filter((key) => Array.isArray((en as any)[key]));
 
       for (const key of arrayKeys) {
         const enLen = ((en as any)[key] as unknown[]).length;
-        const frLen = ((fr as any)[key] as unknown[]).length;
-        expect(frLen, `Array key "${key}": fr has ${frLen} items but en has ${enLen}`).toBe(enLen);
+        const skLen = ((sk as any)[key] as unknown[]).length;
+        expect(skLen, `Array key "${key}": sk has ${skLen} items but en has ${enLen}`).toBe(enLen);
       }
     });
   });
@@ -94,18 +94,18 @@ describe('i18n utils', () => {
   describe('getRelativePath', () => {
     it('removes the locale prefix correctly from pathnames', () => {
       expect(getRelativePath(`${base}en/about`, 'en')).toBe('/about');
-      expect(getRelativePath(`${base}fr/contact`, 'fr')).toBe('/contact');
+      expect(getRelativePath(`${base}sk/contact`, 'sk')).toBe('/contact');
       expect(getRelativePath(`${base}en/`, 'en')).toBe('/');
       expect(getRelativePath(`${base}en`, 'en')).toBe('/');
-      expect(getRelativePath(`${base}fr`, 'fr')).toBe('/');
+      expect(getRelativePath(`${base}sk`, 'sk')).toBe('/');
       expect(getRelativePath(`${base}`, 'en')).toBe('/');
       expect(getRelativePath('', 'en')).toBe('');
     });
 
     it('does not remove the locale if it is part of a larger path segment', () => {
       expect(getRelativePath(`${base}enrollment`, 'en')).toBe('/enrollment');
-      expect(getRelativePath(`${base}french-fries`, 'fr')).toBe('/french-fries');
-      expect(getRelativePath(`${base}fr-ch`, 'fr')).toBe('/fr-ch');
+      expect(getRelativePath(`${base}skateboard`, 'sk')).toBe('/skateboard');
+      expect(getRelativePath(`${base}sk-ch`, 'sk')).toBe('/sk-ch');
     });
 
     it('returns the path unmodified if the locale is not at the start', () => {

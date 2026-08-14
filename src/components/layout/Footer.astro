@@ -8,9 +8,15 @@ const labels = getLabels(Astro.currentLocale, 'layoutFooter');
 const currentLocale = Astro.currentLocale || defaultLocale;
 
 const bottomLinks = [
+    /*
   {
     header: labels.followUs,
     links: [
+      {
+        name: 'Facebook',
+        href: 'https://' + labels.facebook,
+        isExternal: true,
+      },
       {
         name: 'LinkedIn',
         href: 'https://' + labels.linkedin,
@@ -23,6 +29,7 @@ const bottomLinks = [
       },
     ],
   },
+  */
   {
     header: labels.company,
     links: [
@@ -36,6 +43,11 @@ const bottomLinks = [
         href: getRelativeLocaleUrl(currentLocale, '/about'),
         isExternal: false,
       },
+    ],
+  },
+  {
+    header: labels.services,
+    links: [
       {
         name: labels.links.pricing,
         href: getRelativeLocaleUrl(currentLocale, '/pricing'),
@@ -56,16 +68,13 @@ const bottomLinks = [
         href: getRelativeLocaleUrl(currentLocale, '/legal'),
         isExternal: false,
       },
-      {
-        name: labels.links.privacy,
-        href: getRelativeLocaleUrl(currentLocale, '/privacy'),
-        isExternal: false,
-      },
+      /*
       {
         name: labels.links.styleguide,
         href: getRelativeLocaleUrl(currentLocale, '/styleguide'),
         isExternal: false,
       },
+      */
     ],
   },
 ];
@@ -80,7 +89,6 @@ const bottomLinks = [
           <img class="mr-1 inline" width="32" height="32" src={`${base}logo.svg`} alt={labels.companyName} />
           <span class="text-muted align-middle text-xl font-bold">{labels.companyName}</span>
         </a>
-        <p class="text-muted text-base">{labels.description}</p>
         <p class="text-muted text-sm">{labels.copyright}</p>
       </div>
 

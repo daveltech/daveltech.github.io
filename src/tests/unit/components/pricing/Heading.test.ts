@@ -1,12 +1,12 @@
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { expect, test } from 'vitest';
 import Heading from '@components/pricing/Heading.astro';
-import { en } from '@i18n/translations/en';
+import { sk } from '@i18n/translations/sk';
 
 test('Pricing Heading renders correctly', async () => {
   const container = await AstroContainer.create();
   const result = await container.renderToString(Heading);
 
-  expect(result).toContain(en.pricingHeading.title);
-  expect(result).toContain(en.pricingHeading.description);
+  expect(result).toContain(sk.pricingHeading.title);
+  expect(result).toContain(sk.pricingHeading.description);
 });

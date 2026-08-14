@@ -1,105 +1,45 @@
 ---
-import LoaderIcon from '@assets/icons/loader-4-line.svg';
-import QuestionAnswerIcon from '@assets/icons/question-answer-line.svg';
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import { getLabels, defaultLocale } from '@i18n/utils';
+import { getLabels } from '@i18n/utils';
 
-const labels = getLabels(Astro.currentLocale, 'contactForm');
-const currentLocale = Astro.currentLocale || defaultLocale;
-
-const basinFormId = import.meta.env.BASIN_FORM_ID;
-const turnstileSiteKey = import.meta.env.TURNSTILE_SITEKEY;
+const labels = getLabels(Astro.currentLocale, 'contactInfo');
 ---
 
-<section class="py-16 sm:py-20" x-data={`contactForm('${turnstileSiteKey}')`}>
-  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class="grid gap-12 lg:grid-cols-2 lg:gap-8">
-      <div class="flex flex-col gap-4 sm:gap-6">
-        <div class="flex gap-4">
-          <QuestionAnswerIcon class="fill-primary-500 h-8 w-8 shrink-0 sm:h-10 sm:w-10" aria-hidden="true" />
-          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">{labels.title}</h2>
-        </div>
-        <p class="text-muted max-w-106 text-lg sm:max-w-118 sm:text-xl">{labels.description}</p>
-        <p class="text-muted max-w-106 text-base font-medium italic sm:max-w-118 sm:text-lg">{labels.responseTime}</p>
-        <p class="text-muted max-w-106 text-base sm:max-w-118">
-          {labels.policyText}
-          <a href={getRelativeLocaleUrl(currentLocale, '/privacy')} class="text-link font-bold">{labels.policyLink}</a>.
-        </p>
-      </div>
-      <form
-        x-ref="form"
-        action={`https://usebasin.com/f/${basinFormId}`}
-        method="POST"
-        enctype="multipart/form-data"
-        class="mt-3"
-        @submit.prevent="submit"
-        x-show="status === 'idle' || status === 'submitting'"
-      >
-        <!-- Name input -->
+<section class="py-8 sm:py-12">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="bg-surface card-hover rounded-3xl px-6 py-8 sm:px-8 sm:py-10">
+      <h1 class="text-3xl font-medium tracking-tight sm:text-4xl">{labels.heading}</h1>
+
+      <div class="mt-8 space-y-8 text-base sm:text-lg">
         <div>
-          <label for="name" class="sr-only">{labels.form.name}</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            autocomplete="name"
-            class="form-element"
-            placeholder={labels.form.name}
-            required
-          />
+          <p class="text-muted text-sm font-semibold uppercase tracking-[0.18em]">{labels.companyTitle}</p>
+          <p class="mt-3 text-lg font-medium sm:text-xl">{labels.companyName}</p>
+          <a
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(labels.companyAddress)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-link mt-1 inline-flex"
+          >
+            {labels.companyAddress}
+          </a>
         </div>
 
-        <!-- Email input -->
-        <div class="mt-6">
-          <label for="email" class="sr-only">{labels.form.email}</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            autocomplete="email"
-            class="form-element"
-            placeholder={labels.form.email}
-            required
-          />
+        <div>
+          <p class="text-muted text-sm font-semibold uppercase tracking-[0.18em]">{labels.billingTitle}</p>
+          <p class="mt-3">{labels.companyIco}</p>
+          <p class="mt-1">{labels.companyDic}</p>
         </div>
 
-        <!-- Message textarea -->
-        <div class="mt-6">
-          <label for="message" class="sr-only">{labels.form.message}</label>
-          <textarea name="message" id="message" rows="3" class="form-element" placeholder={labels.form.message} required
-          ></textarea>
-        </div>
-
-        <div class="mt-6" x-ref="turnstileContainer"></div>
-
-        <div class="mt-6 flex items-center gap-4">
-          <button class="btn-primary" type="submit" x-bind:disabled="status === 'submitting'">
-            {labels.form.submit}
-          </button>
-          <div x-show="status === 'submitting'" x-cloak>
-            <LoaderIcon class="icon-primary animate-spin" aria-hidden="true" />
-          </div>
-        </div>
-      </form>
-      <div x-show="status === 'success'" x-cloak role="status" aria-live="polite">
-        <div class="bg-surface flex flex-col gap-8 rounded-3xl px-6 py-8 sm:gap-10">
-          <div class="flex flex-col gap-4 sm:gap-6">
-            <h3 class="text-2xl font-medium tracking-tight sm:text-3xl">{labels.success.title}</h3>
-            <p class="text-muted text-base sm:text-lg">{labels.success.desc}</p>
-          </div>
-          <p>
-            <a href={getRelativeLocaleUrl(currentLocale, '/')} class="btn-primary">{labels.success.back}</a>
+        <div>
+          <p class="text-muted text-sm font-semibold uppercase tracking-[0.18em]">{labels.contactsTitle}</p>
+          <p class="mt-3 font-medium">{labels.contactPerson}</p>
+          <p>{labels.contactRole}</p>
+          <p class="mt-3">
+            <span class="font-medium">{labels.phoneTitle}:</span>
+            <a href={`tel:${labels.phone}`} class="text-link ml-2">{labels.phone}</a>
           </p>
-        </div>
-      </div>
-      <div x-show="status === 'error'" x-cloak role="status" aria-live="polite">
-        <div class="bg-surface flex flex-col gap-8 rounded-3xl px-6 py-8 sm:gap-10">
-          <div class="flex flex-col gap-4 sm:gap-6">
-            <h3 class="text-2xl font-medium tracking-tight sm:text-3xl">{labels.error.title}</h3>
-            <p class="text-muted text-base sm:text-lg">{labels.error.desc}</p>
-          </div>
-          <p>
-            <a href={getRelativeLocaleUrl(currentLocale, '/')} class="btn-primary">{labels.error.back}</a>
+          <p class="mt-1">
+            <span class="font-medium">{labels.emailTitle}:</span>
+            <a href={`mailto:${labels.email}`} class="text-link ml-2">{labels.email}</a>
           </p>
         </div>
       </div>

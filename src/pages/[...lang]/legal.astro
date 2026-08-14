@@ -29,9 +29,8 @@ const currentLocale = Astro.currentLocale || defaultLocale;
         {labels.openSourceCreditsText}
         <a
           href="https://github.com/cjoyau/blast/blob/main/LICENSE"
-          target="_blank"
           rel="noopener noreferrer"
-          class="text-link"
+          class="text-link font-bold"
         >
           {labels.licenseLink}
         </a>
@@ -39,11 +38,11 @@ const currentLocale = Astro.currentLocale || defaultLocale;
       </p>
       <p class="mb-4" set:html={labels.contentOwnershipText} />
       <p class="mb-4">{labels.reproductionProhibitedText}</p>
-      <h2 class="mt-12 mb-6 text-xl font-medium sm:text-2xl">{labels.personalDataHeading}</h2>
-      <p class="mb-4">{labels.personalDataIntro}</p>
+      <h2 class="mt-12 mb-6 text-xl font-medium sm:text-2xl">{labels.privacyHeading}</h2>
+      <p class="mb-4">{labels.privacyIntro}</p>
       <ul class="mb-4 ml-6 list-outside list-disc space-y-2">
-        <li set:html={labels.dataCollectionItem} />
-        <li set:html={labels.dataProcessorsItem} />
+        <li set:html={labels.dataProcessingItem} />
+        <li set:html={labels.retentionItem} />
         <li set:html={labels.userRightsItem} />
         <li>
           <span set:html={labels.contactRightsText} />
@@ -53,12 +52,6 @@ const currentLocale = Astro.currentLocale || defaultLocale;
         </li>
         <li set:html={labels.cnilComplaintItem} />
       </ul>
-      <p class="mb-4">
-        {labels.privacyPolicyPromptText}
-        <a href={getRelativeLocaleUrl(currentLocale, '/privacy')} class="text-link font-bold">
-          {labels.privacyPolicyLink}
-        </a>
-      </p>
       <h2 class="mt-12 mb-6 text-xl font-medium sm:text-2xl">{labels.cookiesHeading}</h2>
       <p class="mb-4">{labels.cookiesText}</p>
     </div>

@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import equipmentImg from '@assets/electro-1.webp';
+import { getLabels } from '@i18n/utils';
+
+const labels = getLabels(Astro.currentLocale, 'content');
+---
+
+<section class="py-16 sm:py-20 lg:py-24">
+  <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="flex flex-col gap-20 lg:gap-28">
+      <!-- Services -->
+      <div class="flex flex-col gap-8 lg:gap-12">
+        <div>
+          <h2 class="text-3xl font-medium tracking-tight sm:text-4xl">{labels.servicesTitle}</h2>
+          <p class="text-muted mt-4 text-lg">{labels.servicesIntro}</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {labels.services.map((service) => (
+            <div class="bg-surface card-hover rounded-2xl px-4 py-5">
+              <p class="text-primary-500 text-xs font-semibold tracking-wider uppercase">{service.ref}</p>
+              <h3 class="mt-2 text-base font-medium">{service.name}</h3>
+              <p class="text-muted mt-1 text-sm">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Equipment & certification -->
+      <div class="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+        <Image class="h-auto w-full rounded-3xl" src={equipmentImg} alt="" />
+        <div class="border-primary-500 border-l-4 py-4 pl-6">
+          <div class="flex items-start gap-4">
+            <div class="shrink-0">
+              <svg class="text-primary-500 h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-medium">{labels.certificates}</h3>
+              <ul class="mt-2 space-y-1.5 text-base sm:text-lg">
+                {labels.equipmentList.map((item) => (
+                  <li class="text-muted" set:html={item} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How an inspection works -->
+      <div>
+        <h2 class="mb-8 text-3xl font-medium tracking-tight sm:text-4xl">{labels.legalNote}</h2>
+        <div class="grid gap-6 sm:grid-cols-3">
+          {labels.bulletList.map((bullet, index) => (
+            <div class="bg-surface card-hover rounded-2xl p-6">
+              <span class="bg-primary-500 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <p class="mt-4 text-base leading-relaxed sm:text-lg" set:html={bullet} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

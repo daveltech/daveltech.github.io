@@ -27,7 +27,7 @@ const dnaBackground = (Alpine: Alpine) => {
       // Helix config
       const pointsPerTurn = 24;
       const rungEvery = 3;
-      const speed = reducedMotion ? 0.0004 : 0.0016;
+      const speed = reducedMotion ? 0.0004 : 0.0032;
 
       let helixAmplitude = 60;
       let horizontalGap = 0;

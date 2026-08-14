@@ -41,6 +41,7 @@ export default defineConfig({
         defaultLocale,
         locales: Object.fromEntries(locales.map((locale) => [locale, locale])),
       },
+      filter: (page) => !page.includes('/404'),
     }),
     compress({
       CSS: false,
@@ -59,16 +60,16 @@ export default defineConfig({
   security: {
     csp: {
       scriptDirective: {
-        resources: ["'self'", 'https://challenges.cloudflare.com/'],
+        resources: ["'self'"],
         hashes: [
           'sha256-QdsQr8DYqqAbXiHb2YTZ0RKtdorAfl82xF9ul9WqSOE=', // All pages
-          'sha256-AhGOxzJqJwRvnqrHXGGHOAboYLUDRi5UY2RXZQCouYI=', // index
+          'sha256-C59c8HcKZIibc5cbv5pL4CZMNfRqD8kiMvSm1W7ESnA=', // index
         ],
       },
       styleDirective: {
         resources: ["'self'"],
         hashes: [
-          'sha256-/fWDvP/zU3HvBkNs4SJCgtfIW+buR1Is+LtIxjWEFpw=', // All pages
+          'sha256-sXN0/vchusiwcIhpMvppSCPHBnjUxI+M2IqthXNpDUQ=', // All pages
         ],
       },
       directives: [
@@ -77,9 +78,9 @@ export default defineConfig({
         "font-src 'self'",
         "object-src 'none'",
         "base-uri 'self'",
-        "form-action 'self' https://usebasin.com/",
-        "connect-src 'self' https://usebasin.com/",
-        "frame-src 'self' https://challenges.cloudflare.com/",
+        "form-action 'self'",
+        "connect-src 'self'",
+        "frame-src 'none'",
         'upgrade-insecure-requests',
       ],
     },

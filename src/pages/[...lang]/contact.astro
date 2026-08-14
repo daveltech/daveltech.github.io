@@ -9,12 +9,6 @@ const labels = getLabels(Astro.currentLocale, 'contact');
 ---
 
 <Layout description={labels.description} title={labels.title}>
-  <script
-    slot="head"
-    is:inline
-    src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad"
-    async
-    defer></script>
-  <ContactInfo />
   <ContactForm />
+  <ContactInfo />
 </Layout>
