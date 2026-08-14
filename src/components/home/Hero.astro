@@ -14,22 +14,26 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
 <section class="py-16 sm:py-20 lg:py-24">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col gap-12 lg:gap-16">
-      
       <div class="flex flex-col items-start">
-        <div
-          class="flex w-full max-w-none flex-col items-start gap-5 sm:gap-6"
-          x-data={`typewriter(${interval}, ${max})`}
-          x-init="start()"
-        >
-          <h1
-            class="relative max-w-none text-left text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-7xl lg:whitespace-nowrap"
-          >
-            <span class="lg:hidden" set:text={labels.title} />
+        <div class="flex w-full max-w-none flex-col items-start gap-5 sm:gap-6">
+          <!-- Mobile: static title, no animation, no line -->
+          <h1 class="max-w-none text-left text-4xl font-semibold leading-[1.08] sm:hidden">
+            {labels.title}
+          </h1>
 
-            <span class="hidden lg:inline">
+          <!-- Desktop/tablet: animated title -->
+          <div
+            class="hidden w-full flex-col items-start sm:flex"
+            x-data={`typewriter(${interval}, ${max})`}
+            x-init="start()"
+          >
+            <h1
+              class="relative max-w-none text-left text-5xl font-semibold leading-[1.08] lg:text-7xl lg:whitespace-nowrap"
+            >
               {
                 letters.map((letter, index) => {
                   const included = visibleLetters.filter((v) => v < index).length;
+
                   return (
                     <span
                       set:text={letter}
@@ -43,10 +47,10 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
                   );
                 })
               }
-            </span>
 
-            <span class="from-primary-500/0 to-primary-500 block h-2 w-full max-w-md bg-linear-to-r opacity-75 transition-all duration-300 hover:opacity-100 sm:h-3 sm:max-w-2xl lg:h-4 lg:max-w-4xl"></span>
-          </h1>
+              <span class="from-primary-500/0 to-primary-500 block h-3 w-full max-w-2xl bg-linear-to-r opacity-75 transition-all duration-300 hover:opacity-100 lg:h-4 lg:max-w-4xl"></span>
+            </h1>
+          </div>
 
           <p class="text-muted max-w-2xl text-left text-lg leading-relaxed sm:text-xl lg:max-w-5xl">
             {labels.description}
