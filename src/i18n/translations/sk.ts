@@ -132,7 +132,7 @@ export const sk: Translation = {
     title: 'Odbornosť a spoľahlivosť',
     visibleLetters: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     description: 'Profesionálne vykonávanie revízií, odborných prehliadok a odborných skúšok elektrických zariadení a bleskozvodov v objektoch s napätím do 1000V.',
-    region: 'Poskytujeme služby v Banskobystrickom kraji',
+    region: 'Pomáhame Banskobystrickému kraju',
     heroImgAlt: 'Ilustrácia revízneho technika pri práci.',
   },
   homeServices: {

@@ -24,22 +24,26 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
           <h1
             class="relative max-w-none text-left text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-7xl lg:whitespace-nowrap"
           >
-            {
-              letters.map((letter, index) => {
-                const included = visibleLetters.filter((v) => v < index).length;
-                return (
-                  <span
-                    set:text={letter}
-                    {...(visibleLetters.includes(index)
-                      ? { 'x-ignore': '' }
-                      : {
-                          'x-show': 'i > ' + (initial + (index - included) * interval),
-                          'x-cloak': '',
-                        })}
-                  />
-                );
-              })
-            }
+            <span class="lg:hidden" set:text={labels.title} />
+
+            <span class="hidden lg:inline">
+              {
+                letters.map((letter, index) => {
+                  const included = visibleLetters.filter((v) => v < index).length;
+                  return (
+                    <span
+                      set:text={letter}
+                      {...(visibleLetters.includes(index)
+                        ? { 'x-ignore': '' }
+                        : {
+                            'x-show': 'i > ' + (initial + (index - included) * interval),
+                            'x-cloak': '',
+                          })}
+                    />
+                  );
+                })
+              }
+            </span>
 
             <span class="from-primary-500/0 to-primary-500 block h-2 w-full max-w-md bg-linear-to-r opacity-75 transition-all duration-300 hover:opacity-100 sm:h-3 sm:max-w-2xl lg:h-4 lg:max-w-4xl"></span>
           </h1>
