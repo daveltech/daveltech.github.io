@@ -11,12 +11,12 @@ const pricings = labels.pricings.map((pricing) => ({
   actionLink: getRelativeLocaleUrl(currentLocale, '/contact'),
 }));
 
-const gridCols: Record<number, string> = { 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3' };
+const gridCols: Record<number, string> = { 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 3: 'lg:grid-cols-3', 4: 'lg:grid-cols-4' };
 ---
 
-<section class="py-16 sm:py-20">
+<section class="pt-0 pb-16 sm:pb-20">
   <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-    <div class={`-mt-8 grid place-items-center items-stretch gap-8 lg:mt-0 ${gridCols[Math.min(pricings.length, 3)]}`}>
+    <div class={`grid place-items-center items-stretch gap-8 ${gridCols[Math.min(pricings.length, 4)]}`}>
       {
         pricings.map((pricing) => (
           <div

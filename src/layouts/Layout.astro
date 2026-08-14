@@ -23,12 +23,13 @@ const currentLocale = Astro.currentLocale || defaultLocale;
 const relativePath = getRelativePath(Astro.url.pathname, currentLocale);
 const ogImage = await getImage({ src: ogImageSrc });
 const siteUrl = Astro.site ?? new URL(base, Astro.url);
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'ElectricalContractor',
   name: contactInfo.companyName,
   image: new URL(ogImage.src, siteUrl).toString(),
-  url: siteUrl.toString(),
+  url: canonicalUrl.toString(),
   telephone: contactInfo.phone,
   email: contactInfo.email,
   address: {
@@ -67,7 +68,7 @@ const structuredData = {
     <link rel="icon" type="image/png" sizes="16x16" href={`${base}favicon-16x16.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} crossorigin="use-credentials" />
     <link rel="sitemap" href={`${base}sitemap-index.xml`} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonicalUrl} />
     <link
       rel="alternate"
       hreflang="x-default"
@@ -86,16 +87,16 @@ const structuredData = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={contactInfo.companyName} />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:locale" content={ogLocales[currentLocale] || currentLocale} />
-    <meta property="og:image" content={new URL(ogImage.src, Astro.site)} />
+    <meta property="og:image" content={new URL(ogImage.src, siteUrl)} />
     <meta property="og:image:width" content={String(ogImage.attributes.width)} />
     <meta property="og:image:height" content={String(ogImage.attributes.height)} />
     <meta property="og:image:alt" content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={new URL(ogImage.src, Astro.site)} />
+    <meta name="twitter:image" content={new URL(ogImage.src, siteUrl)} />
     <title>{title}</title>
     <Font cssVariable="--font-inter" preload />
     <ClientRouter />

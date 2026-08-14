@@ -20,10 +20,6 @@ export interface Translation {
     p2: string;
     p3: string;
     aboutImgAlt: string;
-    stats: Array<{
-      name: string;
-      value: string;
-    }>;
   };
   aboutTeam: {
     title: string;
@@ -47,23 +43,11 @@ export interface Translation {
     title: string;
   };
   content: {
-    header: string;
-    intro: string;
-    introCtaPrimary: string;
-    introCtaSecondary: string;
-    aboutTitle: string;
-    aboutText: string;
     servicesTitle: string;
     servicesIntro: string;
     services: Array<{
-      ref: string;
       name: string;
-      description: string;
     }>;
-    teamTitle: string;
-    teamText: string;
-    contactTitle: string;
-    contactText: string;
     certificates: string;
     equipmentList: string[];
     legalNote: string;
@@ -87,9 +71,6 @@ export interface Translation {
     whatsapp: string;
     telegram: string;
     messenger: string;
-    facebook: string;
-    linkedIn: string;
-    github: string;
     whatsappUrl: string;
     telegramUrl: string;
     messengerUrl: string;
@@ -142,10 +123,7 @@ export interface Translation {
   layoutFooter: {
     title: string;
     companyName: string;
-    followUs: string;
     facebook: string;
-    github: string;
-    linkedin: string;
     company: string;
     services: string;
     regulatory: string;
@@ -155,7 +133,6 @@ export interface Translation {
       pricing: string;
       contact: string;
       legal: string;
-      styleguide: string;
     };
     copyright: string;
   };
@@ -228,19 +205,5 @@ export interface Translation {
     cnilComplaintItem: string;
     cookiesHeading: string;
     cookiesText: string;
-  };
-  styleguide: {
-    description: string;
-    title: string;
-    heading: string;
-    logoDesc: string;
-    companyName: string;
-    colorsDesc: string;
-    typoDesc: string;
-    h1Demo: string;
-    h2Demo: string;
-    h3Demo: string;
-    subtitleDemo: string;
-    boldDemo: string;
   };
 }

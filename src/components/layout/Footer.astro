@@ -8,28 +8,6 @@ const labels = getLabels(Astro.currentLocale, 'layoutFooter');
 const currentLocale = Astro.currentLocale || defaultLocale;
 
 const bottomLinks = [
-    /*
-  {
-    header: labels.followUs,
-    links: [
-      {
-        name: 'Facebook',
-        href: 'https://' + labels.facebook,
-        isExternal: true,
-      },
-      {
-        name: 'LinkedIn',
-        href: 'https://' + labels.linkedin,
-        isExternal: true,
-      },
-      {
-        name: 'GitHub',
-        href: 'https://' + labels.github,
-        isExternal: true,
-      },
-    ],
-  },
-  */
   {
     header: labels.company,
     links: [
@@ -68,13 +46,6 @@ const bottomLinks = [
         href: getRelativeLocaleUrl(currentLocale, '/legal'),
         isExternal: false,
       },
-      /*
-      {
-        name: labels.links.styleguide,
-        href: getRelativeLocaleUrl(currentLocale, '/styleguide'),
-        isExternal: false,
-      },
-      */
     ],
   },
 ];

@@ -17,12 +17,12 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
       
       <div class="flex flex-col items-start">
         <div
-          class="flex w-full max-w-4xl flex-col items-start gap-5 sm:gap-6"
+          class="flex w-full max-w-none flex-col items-start gap-5 sm:gap-6"
           x-data={`typewriter(${interval}, ${max})`}
           x-init="start()"
         >
           <h1
-            class="relative max-w-4xl text-left text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-7xl"
+            class="relative max-w-none text-left text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-7xl lg:whitespace-nowrap"
           >
             {
               letters.map((letter, index) => {
@@ -44,11 +44,11 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
             <span class="from-primary-500/0 to-primary-500 block h-2 w-full max-w-md bg-linear-to-r opacity-75 transition-all duration-300 hover:opacity-100 sm:h-3 sm:max-w-2xl lg:h-4 lg:max-w-4xl"></span>
           </h1>
 
-          <p class="text-muted max-w-2xl text-left text-lg leading-relaxed sm:text-xl">
+          <p class="text-muted max-w-2xl text-left text-lg leading-relaxed sm:text-xl lg:max-w-5xl">
             {labels.description}
           </p>
 
-          <p class="text-primary-500 max-w-2xl text-left text-sm font-semibold uppercase">
+          <p class="text-primary-600 dark:text-primary-400 max-w-2xl text-left text-sm font-semibold uppercase">
             {labels.region}
           </p>
         </div>
@@ -57,6 +57,8 @@ const max = initial + (letters.length - visibleLetters.length) * interval;
       <Image
         class="h-auto w-full rounded-3xl object-cover"
         src={heroImg}
+        widths={[640, 960, 1200]}
+        sizes="(max-width: 640px) 100vw, 1200px"
         alt={labels.heroImgAlt}
         priority
       />

@@ -15,15 +15,11 @@ const labels = getLabels(Astro.currentLocale, 'content');
           <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">{labels.servicesTitle}</h2>
           <p class="text-muted mt-4 text-lg leading-relaxed">{labels.servicesIntro}</p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list">
           {labels.services.map((service) => (
-            <div class="bg-surface card-hover rounded-2xl px-4 py-5">
-              <p class="text-primary-500 text-xs font-semibold tracking-wider uppercase">{service.ref}</p>
-              <h3 class="mt-2 text-base font-medium">{service.name}</h3>
-              <p class="text-muted mt-1 text-sm">{service.description}</p>
-            </div>
+            <li class="bg-surface card-hover rounded-2xl px-4 py-5 text-base font-medium">{service.name}</li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <!-- Equipment & certification -->
