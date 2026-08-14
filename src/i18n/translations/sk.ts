@@ -46,7 +46,7 @@ export const sk: Translation = {
   },
   content: {
     servicesTitle: 'Služby',
-    servicesIntro: 'Spoločnosť vykonáva revízie, odborné prehliadky a odborné skúšky elektrických zariadení a bleskozvodov v objektoch s napätím do 1 000 V, konkrétne:',
+    servicesIntro: 'Spoločnosť vykonáva revízie, odborné prehliadky a odborné skúšky elektrických zariadení a bleskozvodov v objektoch s napätím do 1000V, konkrétne:',
     services: [
       { name: 'Bytové domy a spoločné priestory bytových domov' },
       { name: 'Rodinné domy a byty v bytových domoch' },
@@ -97,7 +97,7 @@ export const sk: Translation = {
     messengerUrl: 'https://m.me/61583629266532',
   },
   home: {
-    description: 'DAVELTECH poskytuje revízie, odborné prehliadky a skúšky elektrických zariadení a bleskozvodov do 1 000 V vo Zvolene a v Banskobystrickom kraji.',
+    description: 'DAVELTECH poskytuje revízie, odborné prehliadky a skúšky elektrických zariadení a bleskozvodov do 1000V vo Zvolene a v Banskobystrickom kraji.',
     title: 'DAVELTECH · Revízie elektrických zariadení',
   },
   homeAbout: {
@@ -131,7 +131,7 @@ export const sk: Translation = {
   homeHero: {
     title: 'Odbornosť a spoľahlivosť',
     visibleLetters: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-    description: 'Profesionálne vykonávanie revízií, odborných prehliadok a odborných skúšok elektrických zariadení a bleskozvodov v objektoch s napätím do 1 000 V.',
+    description: 'Profesionálne vykonávanie revízií, odborných prehliadok a odborných skúšok elektrických zariadení a bleskozvodov v objektoch s napätím do 1000V.',
     region: 'Poskytujeme služby v Banskobystrickom kraji',
     heroImgAlt: 'Ilustrácia revízneho technika pri práci.',
   },
