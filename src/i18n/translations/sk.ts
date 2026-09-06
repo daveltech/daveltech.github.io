@@ -1,6 +1,7 @@
 import { type Translation } from '../translation';
 
 export const sk: Translation = {
+  seznamWmt: 'wIROIdxnn4EU9QwQMhAyVbIKkXApGuZh',
   '404': {
     description: 'Stránka sa nenašla. Skontrolujte URL adresu v paneli a skúste to znova.',
     title: 'Stránka sa nenašla · DAVELTECH',
@@ -88,7 +89,7 @@ export const sk: Translation = {
     phoneTitle: 'Telefónne číslo',
     phone: '+421 915 843 614',
     emailTitle: 'Email',
-    email: 'daveltechsro@gmail.com',
+    email: 'info@daveltech.sk',
     whatsapp: 'WHATSAPP',
     telegram: 'TELEGRAM',
     messenger: 'MESSENGER',

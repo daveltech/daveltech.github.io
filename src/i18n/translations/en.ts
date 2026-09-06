@@ -1,6 +1,7 @@
 import { type Translation } from '../translation';
 
 export const en: Translation = {
+  seznamWmt: 'wIROIdxnn4EU9QwQMhAyVbIKkXApGuZh',
   '404': {
     description: 'Page not found. Please check the URL in the address bar and try again.',
     title: 'Page not found · DAVELTECH',
@@ -88,7 +89,7 @@ export const en: Translation = {
     phoneTitle: 'Phone number',
     phone: '+421 915 843 614',
     emailTitle: 'Email',
-    email: 'daveltechsro@gmail.com',
+    email: 'info@daveltech.sk',
     whatsapp: 'WHATSAPP',
     telegram: 'TELEGRAM',
     messenger: 'MESSENGER',

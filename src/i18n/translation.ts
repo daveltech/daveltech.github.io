@@ -1,4 +1,5 @@
 export interface Translation {
+  seznamWmt: string;
   '404': {
     description: string;
     title: string;
