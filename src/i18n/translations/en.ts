@@ -1,7 +1,7 @@
 import { type Translation } from '../translation';
 
 export const en: Translation = {
-  seznamWmt: 'wIROIdxnn4EU9QwQMhAyVbIKkXApGuZh',
+  seznamWmt: '1NoOb4DzWWLQbheT66exZ4gAOmhENWtr',
   '404': {
     description: 'Page not found. Please check the URL in the address bar and try again.',
     title: 'Page not found · DAVELTECH',

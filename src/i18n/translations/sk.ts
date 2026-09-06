@@ -1,7 +1,7 @@
 import { type Translation } from '../translation';
 
 export const sk: Translation = {
-  seznamWmt: 'wIROIdxnn4EU9QwQMhAyVbIKkXApGuZh',
+  seznamWmt: '1NoOb4DzWWLQbheT66exZ4gAOmhENWtr',
   '404': {
     description: 'Stránka sa nenašla. Skontrolujte URL adresu v paneli a skúste to znova.',
     title: 'Stránka sa nenašla · DAVELTECH',
